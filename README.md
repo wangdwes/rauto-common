@@ -28,7 +28,7 @@ DERCF = dercoeff(COEFFMAT); % obtained from step 1.
 3. [...] = trval(T, R, TAU, ...)
 
 evaluate the dercf at query timepoints T, with orders of derivatives specified in R.
-TAU should be the same as in step 1. 
+TAU should be the same as in step 1. T must be a column vector. 
 
 
 ```matlab
@@ -58,7 +58,7 @@ CMY = TRPLAN(5, 2, WPY, TAU); DCY = DERCOEFF(CMY);
 CMZ = TRPLAN(9, 4, WPZ, TAU); DCZ = DERCOEFF(CMZ); 
 CMTHETA = TRPLAN(9, 4, WPTHETA, TAU); DCTHETA = DERCOEFF(CMTHETA); 
 
-[x, y, z, theta] = TRVAL([0:0.05:10], [0: 1], TAU, DCX, DCY, DCZ, DCTHETA); 
+[x, y, z, theta] = TRVAL([0:0.05:10]', [0: 1], TAU, DCX, DCY, DCZ, DCTHETA); 
 
 ```
 
